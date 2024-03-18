@@ -89,6 +89,8 @@ P.S. You can delete this when you're done too. It's your config now! :)
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
@@ -567,6 +569,7 @@ require('lazy').setup({
       local servers = {
         clangd = {},
         cmake = {},
+        glsl_analyzer = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -822,6 +825,10 @@ require('lazy').setup({
         sorter = 'case_sensitive',
       },
       view = {
+        side = 'right',
+        float = {
+          enable = false,
+        },
         width = 30,
       },
       renderer = {
