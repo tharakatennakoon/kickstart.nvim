@@ -568,6 +568,7 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         clangd = {},
+        codelldb = {},
         cmake = {},
         glsl_analyzer = {},
         -- gopls = {},
@@ -772,6 +773,7 @@ require('lazy').setup({
         sources = {
           { name = 'nvim_lsp' },
           { name = 'nvim_lsp_signature_help' },
+          { name = 'nvim_lsp_document_symbol' },
           { name = 'luasnip' },
           { name = 'path' },
         },
@@ -814,31 +816,6 @@ require('lazy').setup({
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
-
-  {
-    'nvim-tree/nvim-tree.lua',
-    dependencies = {
-      'nvim-tree/nvim-web-devicons',
-    },
-    opts = {
-      sort = {
-        sorter = 'case_sensitive',
-      },
-      view = {
-        side = 'right',
-        float = {
-          enable = false,
-        },
-        width = 30,
-      },
-      renderer = {
-        group_empty = true,
-      },
-      filters = {
-        dotfiles = true,
-      },
-    },
-  },
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
@@ -931,7 +908,7 @@ require('lazy').setup({
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
