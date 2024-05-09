@@ -15,6 +15,7 @@ return {
     dependencies = {
       'nvim-tree/nvim-web-devicons',
     },
+    event = 'VimEnter',
     opts = {
       sort = {
         sorter = 'case_sensitive',
@@ -24,7 +25,7 @@ return {
         float = {
           enable = false,
         },
-        width = 30,
+        width = 60,
       },
       renderer = {
         group_empty = true,
@@ -33,6 +34,11 @@ return {
         dotfiles = true,
       },
     },
+
+    config = function(_, opts)
+      require('nvim-tree').setup(opts)
+      vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>')
+    end,
   },
 
   {
@@ -41,7 +47,21 @@ return {
     config = function()
       local tt = require 'toggleterm'
       tt.setup()
-      vim.keymap.set('n', '<C-n>', '<cmd>ToggleTerm direction=float<CR>')
+      vim.keymap.set('n', '<C-i>', '<cmd>ToggleTerm direction=float<CR>')
     end,
+  },
+
+  {
+    'akinsho/bufferline.nvim',
+    version = '*',
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    event = 'VimEnter',
+    config = function()
+      require('bufferline').setup()
+    end,
+  },
+
+  {
+    dir = '~/.config/nvim/lua/custom/plugins/vscodetask.nvim/',
   },
 }
