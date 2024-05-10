@@ -206,6 +206,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- This line is added to force neovim to tread .comp files as glsl
 vim.filetype.add {
   extension = {
     comp = 'glsl',
