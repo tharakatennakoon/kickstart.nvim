@@ -72,6 +72,16 @@ return {
   },
 
   {
+    'mfussenegger/nvim-dap-python',
+    dependencies = {
+      'mfussenegger/nvim-dap',
+    },
+    config = function(_, opts)
+      require('dap-python').setup()
+    end,
+  },
+
+  {
     dir = '~/.config/nvim/lua/custom/plugins/vscodetask.nvim/',
   },
 }
