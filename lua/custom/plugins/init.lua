@@ -47,7 +47,7 @@ return {
     config = function(_, opts)
       local nt = require 'nvim-tree'
       nt.setup(opts)
-      vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>')
+      vim.keymap.set('n', '<C-p>', '<cmd>NvimTreeToggle<CR>')
     end,
   },
 
@@ -82,6 +82,6 @@ return {
   },
 
   {
-    dir = '~/.config/nvim/lua/custom/plugins/vscodetask.nvim/',
+    'mg979/vim-visual-multi',
   },
 }
