@@ -77,11 +77,15 @@ return {
       'mfussenegger/nvim-dap',
     },
     config = function(_, opts)
-      require('dap-python').setup()
+      require('dap-python').setup(opts)
     end,
   },
 
   {
     'mg979/vim-visual-multi',
+  },
+
+  {
+    'tharakatennakoon/vstasks',
   },
 }
