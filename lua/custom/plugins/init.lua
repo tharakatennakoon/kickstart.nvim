@@ -72,16 +72,6 @@ return {
   },
 
   {
-    'mfussenegger/nvim-dap-python',
-    dependencies = {
-      'mfussenegger/nvim-dap',
-    },
-    config = function()
-      require('dap-python').setup()
-    end,
-  },
-
-  {
     'christoomey/vim-tmux-navigator',
     cmd = {
       'TmuxNavigateLeft',
