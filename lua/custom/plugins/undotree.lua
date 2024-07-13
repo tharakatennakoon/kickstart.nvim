@@ -4,8 +4,6 @@ return {
     if vim.fn.has 'persistent_undo' == 1 then
       local undodir = vim.loop.os_homedir() .. '/.undodir'
 
-      print('tharaka' .. undodir)
-
       if not vim.fn.isdirectory(undodir) then
         vim.fn.mkdir(undodir, 'p')
       end
